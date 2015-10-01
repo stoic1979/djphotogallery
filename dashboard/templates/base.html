@@ -1,0 +1,36 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+        {% block head %}{% endblock %}
+        <link rel="stylesheet" type="text/css" href={% static "css/bootstrap.css" %}>
+        <link rel="stylesheet" type="text/css" href={% static "css/style.css" %}>
+    </head>
+    <body bgcolor="#ccddcc">
+        <div id="page-container">
+
+            {% if request and not request.user.is_anonymous %}
+            Welcome: <b> {{ request.user }}</b> <br>
+            {% else %}
+            Welcome: <b>Guest</b> <br>
+            {% endif %}
+            <br>
+            <ul>
+                <li class="btn btn-inverse"><a href="/">GALLERIES</a></li>
+
+                {% if request and not request.user.is_anonymous %}
+                <li class="btn btn-inverse"><a href="/logout/">LOGOUT</a></li>
+                {% else %}
+                <li class="btn btn-inverse"><a href="/login/">LOGIN</a></li>
+                {% endif %}
+            </ul>
+            <hr>
+            {% block body %}{% endblock %}
+
+        </div>
+        <div id="footer">
+            <center><br><p>Under development by weavebytes</p></center>
+        </div>
+    </body>
+</html>
