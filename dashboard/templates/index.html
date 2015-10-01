@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 
 {% block head %}
 <title>DjPhotoGallery - Home</title>
@@ -7,6 +8,7 @@
 {% block body %}
 <h4> DJANGO PHOTO GALLERY</h4><hr>
 
+<img class="img-rounded" src={% static "images/djphotogallery.png" %} width="150" height="150"></img>
 <section>
 <p>Django Photo Gallery</p>
 </section>
