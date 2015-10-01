@@ -5,12 +5,15 @@ from django.core.context_processors import csrf
 from django.contrib.auth import authenticate, login, logout
 
 from dashboard.forms import LoginForm
+from gallery.models import *
 
 def home(request):
     """
     home page view for the website
     """
-    return render_to_response('index.html')
+    galleries = Gallery.objects.all()
+    c = {'galleries': galleries, 'request': request}
+    return render_to_response('index.html', c)
 
 def login_page(request):
     """
