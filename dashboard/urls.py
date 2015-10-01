@@ -19,4 +19,8 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'gallery.views.home', name='home'),
+    url(r'^login/$', 'gallery.views.login_page', name='login_page'),
+    url(r'^logout/$', 'gallery.views.logout_page', name='logout_page'),
+    url(r'^accounts/logout/$', 'gallery.views.logout_page', name='logout_page'),
+    url(r'^accounts/login/$', 'gallery.views.login_page', name='login_page'),
 ]
