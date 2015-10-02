@@ -1,7 +1,9 @@
+from django.contrib.auth.models import User
 from django.db import models
 from datetime import datetime
 
 class Gallery(models.Model):
+    owner       = models.ForeignKey(User)
     date_added  = models.DateTimeField(default=datetime.now)
     title       = models.CharField(max_length=64, unique=True)
     slug        = models.SlugField(unique=True)
