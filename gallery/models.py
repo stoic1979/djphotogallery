@@ -7,3 +7,9 @@ class Gallery(models.Model):
     slug        = models.SlugField(unique=True)
     description = models.TextField(blank=True)
     is_public   = models.BooleanField(default=True)
+
+    def __unicode__(self):
+        """
+        function returns unicode representation of a gallery
+        """
+        return self.title
