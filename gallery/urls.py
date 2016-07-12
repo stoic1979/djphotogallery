@@ -21,4 +21,10 @@ import album.views as album_views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', album_views.home, name='home'),
+
+    # login/logout
+    url(r'^login/$', album_views.login_page, name='login_page'),
+    url(r'^logout/$', album_views.logout_page, name='logout_page'),
+    url(r'^accounts/logout/$', album_views.logout_page, name='logout_page'),
+    url(r'^accounts/login/$', album_views.login_page, name='login_page'),
 ]
