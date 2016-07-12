@@ -13,11 +13,14 @@
 {% if request and not request.user.is_anonymous %}
 Welcome: <b>{{ request.user }}</b>
 {% endif %}
-| <a href="/">Albums</a> | <a href="/add_album/">Add Album</a> | | <a href="/photos/">Photos</a> | <a href="/add_photo/">Add Photo</a> |
+<a class="btn btn-primary" href="/">Albums</a>  
+<a class="btn btn-primary" href="/add_album/">Add Album</a> 
+<a class="btn btn-primary" href="/photos/">Photos</a>
+<a class="btn btn-primary" href="/add_photo/">Add Photo</a>
                         {% if request and not request.user.is_anonymous %}
-                        <a href="/logout/">Logout</a> |
+                        <a class="btn btn-primary" href="/logout/">Logout</a>
                         {% else %}
-                        <a href="/login/">Login</a> |
+                        <a class="btn btn-primary" href="/login/">Login</a>
                         {% endif %}
 {% block body %}{% endblock %}
 
