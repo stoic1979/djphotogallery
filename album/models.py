@@ -14,7 +14,7 @@ class Album(models.Model):
     description = models.CharField(max_length=1024, verbose_name=_('Title'))
 
     # preview/thumbnail image for an album
-    img = models.FileField(upload_to = 'photos/albums/')
+    img = models.FileField(upload_to = 'photos/')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('Created at'))
 
 
