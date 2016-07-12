@@ -7,6 +7,8 @@ from django.shortcuts import render_to_response
 from django.contrib.auth import authenticate, login, logout
 from django.template import RequestContext
 
+from album.models import Album, Photo
+
 
 @login_required
 def home(request):  
@@ -18,6 +20,16 @@ def home(request):
 def add_album(request):
     data = {}
     return render_to_response('add_album.html', data, context_instance=RequestContext(request))
+
+
+@login_required
+def save_album(request):
+    data = {}
+    title = request.POST["title"]
+    description = request.POST["description"]
+    album = Album(user=request.user, title=title, description=description, img=request.FILES['img'])
+    album.save()
+    return render_to_response('index.html', data, context_instance=RequestContext(request))
 
 
 ################################################
