@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.conf.urls.static import static
 
 import album.views as album_views
 import reg.views as reg_views
+import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -31,4 +33,5 @@ urlpatterns = [
 
     # registration
     url(r'^register/$', reg_views.regform, name='regform'),
-]
+
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
