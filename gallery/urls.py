@@ -24,6 +24,7 @@ import settings
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', album_views.home, name='home'),
+    url(r'^add_album/$', album_views.add_album, name='add_album'),
 
     # login/logout
     url(r'^login/$', album_views.login_page, name='login_page'),

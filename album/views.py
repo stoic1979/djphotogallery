@@ -14,6 +14,11 @@ def home(request):
     return render_to_response('index.html', data, context_instance=RequestContext(request))
 
 
+def add_album(request):
+    data = {}
+    return render_to_response('add_album.html', data, context_instance=RequestContext(request))
+
+
 ################################################
 #                                              #
 #               LOGIN/LOGOUT                   #
