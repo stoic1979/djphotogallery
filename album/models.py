@@ -17,6 +17,11 @@ class Album(models.Model):
     img = models.FileField(upload_to = 'photos/')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('Created at'))
 
+    def __unicode__(self):
+        """
+        function returns unicode representation of album
+        """
+        return "%s" % self.title
 
 class Photo(models.Model):
     """
