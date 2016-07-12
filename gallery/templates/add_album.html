@@ -6,7 +6,7 @@
 <div style="width: 400px; margin-left: 50px;">
     <br>
     <h3>Add Album</h3><hr>
-<form>
+    <form method="post" action="/save_album/">{% csrf_token %}
   <fieldset class="form-group">
     <label for="title">Title</label>
     <input type="text" class="form-control" id="title" placeholder="Album Title">
