@@ -11,7 +11,7 @@ class Album(models.Model):
     """
     user = models.ForeignKey(User)	
     title = models.CharField(max_length=128, verbose_name=_('Title'))
-    description = models.CharField(max_length=1024, verbose_name=_('Title'))
+    description = models.CharField(max_length=1024, verbose_name=_('Description'))
 
     # preview/thumbnail image for an album
     img = models.FileField(upload_to = 'photos/')
