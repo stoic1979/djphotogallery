@@ -16,6 +16,9 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+import album.views as album_views
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', album_views.home, name='home'),
 ]
