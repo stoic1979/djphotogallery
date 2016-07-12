@@ -6,13 +6,9 @@
 <table class="table" width="100" cellspacing="5" cellpadding="5" border="1">
 
     <tr> 
-        {% for album in albums %}
+        {% for photo in photos %}
         <td>
-            <center>
-                <a href="/show_album/{{ album.id }}">
                     <img src="{{ album.img.url }}" width="240" height="240"></img><br>
-                    <b>{{ album.title }}</b><br>{{ album.created_at }}</a>
-            </center>
         </td>
         {% if forloop.counter|divisibleby:4 %}
     </tr>

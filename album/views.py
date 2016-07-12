@@ -24,6 +24,13 @@ def add_album(request):
 
 
 @login_required
+def show_album(request, pk):
+    album = Album.objects.get(id=pk)
+    photos = Photo.objects.filter(album=album)
+    data = {"album": album, "photos": photos}
+    return render_to_response('show_album.html', data, context_instance=RequestContext(request))
+
+@login_required
 def save_album(request):
     data = {}
     title = request.POST["title"]
